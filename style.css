@@ -11,3 +11,161 @@
 
 /* Subtle scroll reveal */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.revealed{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.project-card{transition:none}}
+
+/* ===== Technical Expertise section: desktop-first responsive layout ===== */
+.expertise-section {
+  background: #f7faff;
+  color: #17264d;
+  padding: 78px 0;
+  width: 100%;
+}
+.expertise-section .expertise-container {
+  width: min(1200px, calc(100% - 48px));
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.expertise-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 46px;
+}
+.expertise-heading .eyebrow {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #2674d9;
+}
+.expertise-heading h2 {
+  margin: 0 0 14px;
+  font: 700 clamp(32px, 3.2vw, 44px)/1.2 "Space Grotesk", Inter, sans-serif;
+  letter-spacing: -1px;
+  color: #17264d;
+  overflow-wrap: normal;
+}
+.expertise-heading > p:last-child {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  align-items: stretch;
+}
+.expertise-card {
+  min-width: 0;
+  width: 100%;
+  padding: 30px 26px;
+  background: #fff;
+  color: #17264d;
+  border: 1px solid #e0e9f6;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(30, 60, 110, .05);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.expertise-card:hover {
+  transform: translateY(-5px);
+  border-color: #bfd5fa;
+  box-shadow: 0 14px 32px rgba(30, 60, 110, .11);
+}
+.expertise-icon {
+  width: 112px;
+  height: 112px;
+  padding: 20px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.expertise-icon svg { display: block; width: 100%; height: 100%; }
+.expertise-icon.api-icon, .expertise-icon.datapower-icon { background: #edf5ff; color: #2877e9; }
+.expertise-icon.development-icon { background: #f0f4f9; padding: 13px; }
+.expertise-icon.development-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.expertise-icon.security-icon { background: #eaf9f3; color: #16a783; }
+.expertise-icon.integration-icon { background: #f1edff; color: #7051e8; }
+.expertise-icon.testing-icon { background: #fff4e8; color: #f49316; }
+.expertise-card h3 {
+  margin: 0 0 14px;
+  text-align: center;
+  font: 600 21px/1.4 "Space Grotesk", Inter, sans-serif;
+  color: #17264d;
+  overflow-wrap: normal;
+}
+.expertise-card p {
+  margin: 0;
+  color: #526b96;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 1100px) {
+  .expertise-grid { gap: 26px; }
+  .expertise-card { padding: 32px 28px; }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .expertise-section { padding: 62px 0; }
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+@media (max-width: 599px) {
+  .expertise-section { padding: 52px 0; }
+  .expertise-section .expertise-container { width: calc(100% - 32px); }
+  .expertise-heading { margin-bottom: 30px; }
+  .expertise-heading h2 { font-size: 32px; }
+  .expertise-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .expertise-card { padding: 26px 22px; }
+  .expertise-icon { width: 100px; height: 100px; }
+  .expertise-card h3 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expertise-card { transition: none; }
+  .expertise-card:hover { transform: none; }
+}
+
+/* Technical Expertise — dark navy theme */
+#skills.section,
+#skills.section.dark {
+  background-color: #111827;
+  color: #e2e8f0;
+}
+
+#skills .section-head h2 {
+  color: #e2e8f0;
+}
+
+#skills .skill {
+  background-color: #151f30;
+  border: 1px solid #2a364b;
+  border-radius: 12px;
+  color: #e2e8f0;
+  padding: 24px 30px;
+}
+
+#skills .skill h3 {
+  color: #e2e8f0;
+}
+
+#skills .skill p {
+  color: #9aabc2;
+}
+
+#skills .skill .icon {
+  color: #69a2f4;
+  border-color: #355273;
+  background: transparent;
+}
+
+/* Force Technical Expertise heading to white */
+#skills.expertise-section .expertise-heading h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Optional: make the subtitle white too */
+#skills.expertise-section .expertise-heading > p:not(.eyebrow) {
+  color: #ffffff !important;
+}
