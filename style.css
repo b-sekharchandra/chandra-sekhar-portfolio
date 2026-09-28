@@ -169,3 +169,15 @@
 #skills.expertise-section .expertise-heading > p:not(.eyebrow) {
   color: #ffffff !important;
 }
+
+/* Align certification details to the right */
+.facts div:last-child {
+  align-items: flex-start;
+}
+
+.facts div:last-child b {
+  flex: 0 1 65%;
+  margin-left: auto;
+  text-align: right;
+  line-height: 1.6;
+}
